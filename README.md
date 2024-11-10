@@ -46,6 +46,7 @@ b64_cipher = base64.b64encode( cipher )
 print(b64_cipher)
 ```
 
+requirements.txt
 ``` requirements.txt
 cryptography>= 43.0.3
 ```
