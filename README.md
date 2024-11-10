@@ -82,6 +82,8 @@ console.log( clearmessage );
 
 - using nodejs
 ```
+./make_key.sh 
+writing RSA key
 ./rsa_oaep_encrypt.py > cipher.b64  
 node rsa_oaep_decrypt.js
 hello clear message
@@ -90,6 +92,8 @@ hello clear message
 
 - using njs
 ```
+./make_key.sh 
+writing RSA key
 ./rsa_oaep_encrypt.py > cipher.b64  
 njs rsa_oaep_decrypt.js
 hello clear message
