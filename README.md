@@ -51,14 +51,54 @@ requirements.txt
 cryptography>= 43.0.3
 ```
 
+```
+pip3 install -r requirements.txt 
+```
+
 ## crypto.subtle rsa decrypt
 
 
 crypto_decrypt.py
 
 ``` js
-
+let pem_file = 'private.pkcs8.pem';
+// load private key
+let private_key = await importPrivateKey( pem_file );
+// load cipher
+var b64cipher = fs.readFileSync( 'cipher.b64', { encoding: 'utf8', flag: 'r' } ); 
+const buffer = Buffer.from(b64cipher, 'base64'); // base64 decode
+const hash = toArrayBuffer(buffer); // convert to array buffer
+// decrypt
+var value = await crypto.subtle.decrypt( { name: "RSA-OAEP" }, private_key, hash );
+// convert an ArrayBuffer to a string
+const decoder = new TextDecoder();
+const clearmessage = decoder.decode(value);
+// dump content
+console.log( clearmessage );
 ```
+
+
+## example 
+
+- using nodejs
+```
+./make_key.sh 
+writing RSA key
+./rsa_oaep_encrypt.py > cipher.b64  
+node rsa_oaep_decrypt.js
+hello clear message
+```
+
+
+- using njs
+```
+./make_key.sh 
+writing RSA key
+./rsa_oaep_encrypt.py > cipher.b64  
+njs rsa_oaep_decrypt.js
+hello clear message
+```
+
 
 
 # links
