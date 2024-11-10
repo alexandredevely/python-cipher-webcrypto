@@ -78,23 +78,38 @@ console.log( clearmessage );
 ```
 
 
-## example 
+## usage
 
-- using nodejs
+```
+git clone https://github.com/alexandredevely/python-cipher-webcrypto.git
+cd python-cipher-webcrypto
+```
+
+create rsa keys
 ```
 ./make_key.sh 
 writing RSA key
-./rsa_oaep_encrypt.py > cipher.b64  
+```
+
+- install pycryptodome python module
+```
+pip3 install -r requirements.txt
+```
+
+- create cipher base64 file
+```
+./rsa_oaep_encrypt.py > cipher.b64
+```
+
+- decrypt with nodejs
+```
 node rsa_oaep_decrypt.js
 hello clear message
 ```
 
 
-- using njs
+- or decrypt with njs
 ```
-./make_key.sh 
-writing RSA key
-./rsa_oaep_encrypt.py > cipher.b64  
 njs rsa_oaep_decrypt.js
 hello clear message
 ```
