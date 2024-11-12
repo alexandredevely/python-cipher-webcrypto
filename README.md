@@ -13,7 +13,7 @@ sample code to encrypt a clear message using python's crypto module with RSA OAE
 ``` bash
 openssl genrsa -out private.pem 2048
 openssl pkcs8 -topk8 -inform PEM -outform PEM -nocrypt -in private.pem -out private.pkcs8.pem
-openssl rsa -in private.pem -RSAPublicKey_out -out rsapublic.pem
+openssl rsa -in private.pem -RSAPublicKey_out -out public.pem
 ```
 
 ## python rsa encrypt
@@ -37,7 +37,7 @@ rsa_public_key_content = f.read()
 f.close()
 
 # load the rsa_public_key_content
-public_key = PKCS1_OAEP.new( key=rsa_public_key_content, hashAlgo=Crypto.Hash.SHA256 )
+public_key = PKCS1_OAEP.new( key=rsa_public_key_content )
 # encrypt
 cipher = pubobj.encrypt(clear_message)
 # convert to b64
@@ -57,8 +57,7 @@ pip3 install -r requirements.txt
 
 ## crypto.subtle rsa decrypt
 
-
-crypto_decrypt.py
+rsa_oaep_decrypt.js
 
 ``` js
 let pem_file = 'private.pkcs8.pem';
