@@ -7,6 +7,7 @@ sample code to encrypt a clear message using python's crypto module with RSA OAE
 ```
 
 
+# using SHA-1
 
 ## create RSA public and private keys
 
