@@ -117,6 +117,10 @@ hello clear message
 
 # links
 
-https://diafygi.github.io/webcrypto-examples/
+- supported_algorithms
+[https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto#supported_algorithms]
+
+- webcrypto-examples
+[https://diafygi.github.io/webcrypto-examples]
 
 
