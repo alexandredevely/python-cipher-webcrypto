@@ -180,6 +180,9 @@ hello clear message
 - supported_algorithms
 [https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto#supported_algorithms]
 
+- web_crypto_api_example
+[https://github.com/benjamin5252/web_crypto_api_example]
+
 - webcrypto-examples
 [https://diafygi.github.io/webcrypto-examples]
 
